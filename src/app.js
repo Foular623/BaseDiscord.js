@@ -1,7 +1,7 @@
 const { Client, GatewayIntentBits, Collection, REST, Routes } = require('discord.js'); 
 const path = require('path');
 const fs = require('fs');
-const ExpressApi = require('./utils/express/main');
+const ExpressApi = require('./models/express/main');
 
 require('dotenv').config();
 
