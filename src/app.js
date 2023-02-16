@@ -1,7 +1,7 @@
 const { Client, GatewayIntentBits, Collection, REST, Routes } = require('discord.js'); 
 const path = require('path');
 const fs = require('fs');
-const ExpressApi = require('./models/express/main');
+const ExpressApi = require('./models/express');
 
 require('dotenv').config();
 
@@ -56,7 +56,7 @@ require('dotenv').config();
             body: commands
         });   
         
-        var express = new ExpressApi('12345', 5055, client);
+        var express = new ExpressApi('12345', process.env.PORT, client);
 
         client.login(process.env.TOKEN);
     } catch (err) {

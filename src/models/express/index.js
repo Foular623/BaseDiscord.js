@@ -1,11 +1,11 @@
 // Fuente: https://github.com/zekroTutorials/DiscordWebsocket/blob/master/ws/ws.js
 
-const express = require('express');
-const bodyParser = require("body-parser");
-const cors = require('cors');
-const http = require('http');
-const socketIo = require('socket.io');
-const Sockets = require('./socket');
+const express       = require('express');
+const bodyParser    = require("body-parser");
+const cors          = require('cors');
+const http          = require('http');
+const socketIo      = require('socket.io');
+const Sockets       = require('./socket');
 
 /**
  * Websocket class.
@@ -39,11 +39,9 @@ class ExpressDiscord {
 
     execute() {
         this.middlewave();
-
-        this.registerRoots();
-        
+        this.socketsConfigure();
         // Start websocket on port defined in constructors arguments
-        this.server.listen(port, () => {
+        this.server.listen(this.port, () => {
             console.log("Websocket API set up at port " + this.server.address().port);
         });
     }
